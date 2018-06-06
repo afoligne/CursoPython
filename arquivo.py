@@ -11,4 +11,4 @@ with open('documento.txt', 'r', encoding='utf-8') as arquivo:
     print('O autor' +nome 'possui'+ quantidade_nome 'citações no arquivo')
     
     
-    
+    #mais documentação
