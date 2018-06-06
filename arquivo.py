@@ -1,14 +1,19 @@
-r'''for arquivo in os.listdir('C:\Users\Ladetec\Desktop\projeto'):
-        if os.path.isfile('C:\Users\Ladetec\Desktop\projeto' +arquivo):
-            print(arquivo)'''
-quantidade_nome = 0
-nome = input('Digite o nome do autor a ser encontrado')
-with open('documento.txt', 'r', encoding='utf-8') as arquivo:
-    for linha in arquivo:
-        print(linha)
-        if nome in linha:
-            quantidade_nome+=1
-    print('O autor' +nome 'possui'+ quantidade_nome 'citações no arquivo')
+import os 
+
+def busca_autor(arquivo, nome):
+    quantidade_nome = 0
+    with open(arquivo, 'r', encoding='utf-8') as arquivo:
+        for linha in arquivo:
+            if nome in linha:
+                quantidade_nome+=1
+    print('O autor',nome,' possui ', str(quantidade_nome) , 'citações no arquivo')
+
+def busca_arquivos():
+     nome = input('Digite o nome do autor a ser encontrado: ')
+     for arquivo in os.listdir(r'C:\Users\Ladetec\CursoPython\projeto'):
+        print(arquivo)
+        if os.path.isfile('C:\\Users\\Ladetec\\CursoPython\\projeto\\' +arquivo):
+            arquivo = 'C:\\Users\\Ladetec\\CursoPython\\projeto\\' +arquivo
+            busca_autor(arquivo, nome)
     
-    
-    #mais documentação
+busca_arquivos()
