@@ -10,10 +10,10 @@ def busca_autor(arquivo, nome):
 
 def busca_arquivos():
      nome = input('Digite o nome do autor a ser encontrado: ')
-     for arquivo in os.listdir(r'C:\Users\Ladetec\CursoPython\projeto'):
+     for arquivo in os.listdir(os.getcwd()):
         print(arquivo)
-        if os.path.isfile('C:\\Users\\Ladetec\\CursoPython\\projeto\\' +arquivo):
-            arquivo = 'C:\\Users\\Ladetec\\CursoPython\\projeto\\' +arquivo
+        if os.path.isfile(os.getcwd() +arquivo):
+            arquivo = os.getcwd() +arquivo
             busca_autor(arquivo, nome)
     
 busca_arquivos()
